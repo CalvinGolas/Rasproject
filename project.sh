@@ -5,42 +5,46 @@ echo ""
 
 echo "<html><head><title>Sound Kitchen</title></head>"
 
-echo "<body><p>Query a digit for a different song</p>"
+echo "<body><p>Query a digit to order a different song</p>"
 
 [[ $QUERY_STRING =~ ([0-9])*([0-9]) ]]
 
-echo "<p>You Entered: ${BASH_REMATCH[0]}</p>
-
 case ${BASH_REMATCH[0]} in
-[0]
+[0])
 Message="Song 0"
 ;;
-[1]
+[1])
 Message="Song 1"
 ;;
-[2]
-Message="Song 0"
+[2])
+Message="Song 2"
 ;;
-[3]
-Message="Song 1"
+[3])
+Message="Song 3"
 ;;
-[4]
-Message="Song 0"
+[4])
+Message="Song 4"
 ;;
-[5]
-Message="Song 1"
+[5])
+Message="Song 5"
 ;;
-[6]
-Message="Song 0"
+[6])
+Message="Song 6"
 ;;
-[7]
-Message="Song 1"
+[7])
+Message="Song 7"
 ;;
-[8]
-Message="Song 0"
+[8])
+Message="Song 8"
 ;;
-[9]
-Message="Song 1"
+[9])
+Message="Song 9"
+;;
+[1][2][1][0][1][8][1][5])
+Message="From the secret menu, the house special: ODE TO ADA"
+;;
+*)
+Message="You failed to order a song on the menu, so here is GARBAGE SONG on the house!"
 ;;
 esac
 
